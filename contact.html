@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Team3Cinemas</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        function validateInput() {
+            var x, text;
+
+            // Get the value of the input field with id="numb"
+            x = document.getElementById("numbValidate").value;
+
+            // If x is Not a Number or less than one or greater than 10
+            if (isNaN(x) || x < 9 || x > 17) {
+                text = "Input not valid";
+            } else {
+                text = "Input OK";
+            }
+            document.getElementById("logMessage").innerHTML = text;
+        }
+    </script>
+
+    <!--Different font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            background-color: #404144;
+        }
+        footer {
+            background-color: #28292b;
+            padding: 25px;
+        }
+        .container-fluid {
+            color: gray;
+        }
+        #myCarousel {
+            padding-top: 15px;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: #d8b541;
+            border-color: #d8aa3d;
+        }
+
+        .btn-primary:hover {
+            color: #fff;
+            background-color: #b9973a;
+            border-color: #bf913a;
+        }
+
+        .btn-primary:focus, .btn-primary.focus {
+            -webkit-box-shadow: 0 0 0 2px rgba(216, 170, 61, 0.5);
+            box-shadow: 0 0 0 2px rgba(216, 170, 61, 0.5);
+        }
+
+        .btn-primary.disabled, .btn-primary:disabled {
+            background-color: #d8b541;
+            border-color: #d8aa3d;
+        }
+
+        .btn-primary:active, .btn-primary.active,
+        .show > .btn-primary.dropdown-toggle {
+            color: #fff;
+            background-color: #d8b541;
+            background-image: none;
+            border-color: #d8aa3d;
+        }
+
+        .centered {
+            text-align: center;
+            font-size: 0;
+            background: #e3e8ef;
+            padding-top: 80px;
+            min-height: 960px;
+        }
+        .centered > div {
+            float: none;
+            display: inline-block;
+            text-align: left;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+<nav id="topnav" class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><b>TEAM3</b> Cinemas</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navBar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#home">Home</a></li>
+                <li><a href="#films">Films</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#search"><span class="glyphicon glyphicon-search"></span> Search</a></li>
+                <li><a href="#account"><span class="glyphicon glyphicon-user"></span> Account</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<nav id="bottomnav" class="navbar navbar-inverse navbar-fixed-bottom"
+<div class="container-fluid">
+    <div class="navbar-header">
+        <p>Copyright Team3Cinemas</p>
+    </div>
+</div>
+</nav>
+
+<div class="container">
+    <div class="row centered">
+        <div class="col-sm-4 col-md-4">
+            <div class="row">
+                <form role="form" id="contact-form" class="contact-form">
+                     <div class="row" style="margin-top: 150px"></div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h1><strong>Contact us</strong></h1>
+                            </div>
+                        </div>
+                         <div class="row">
+                             <div class="col-md-6">
+                                 <div class="form-group">
+                                    <input type="text" class="form-control" name="Name" autocomplete="off" id="Name" placeholder="Name">
+                                 </div>
+                             </div>
+                             <div class="col-md-6">
+                                 <div class="form-group">
+                                        <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="E-mail">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control textarea" rows="3" name="Message" id="Message" placeholder="Message"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="numbValidate">Enter a number between 9 and 17</label>
+                                        <input type="text" class="form-control" name="Validator" autocomplete="off" id="numbValidate" placeholder="Validation">
+                                        <p id="logMessage" hidden></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn main-btn pull-right" onclick="validateInput()">Send a message</button>
+                                </div>
+                            </div>
+                        </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
