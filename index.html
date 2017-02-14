@@ -4,180 +4,168 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Team3Cinemas</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!--Different font -->
+    <!-- One Page Scroll -->
+    <!-- <script src="jquery.onepage-scroll.min.js"></script> -->
+    <!-- Our Scripts -->
+    <script src="script.js"></script>
+    <!-- Date Picker -->
+    <script src="bootstrap-datepicker.min.js"></script>
+
+    <!-- One Page Scroll CSS -->
+    <!-- <link rel="stylesheet" type="text/css" href="onepage-scroll.css"> -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- JQuery UI css -->
+    <style rel="stylesheet" type="text/css" href="bootstrap-datepicker.css"></style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway" rel="stylesheet">
     <link rel="stylesheet" href="animate.css">
     <link rel="stylesheet" type="text/css" href="cinemaStyle.css">
-
+    <!-- Our StyleSheet -->
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-
 <body onclick="disappear();">
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand animated tada" href="#" style="padding-top:-12px;"><b>TEAM</b> <font color="#800000" size="5em" style="padding-right: 10px;">3</font> Cinemas</a>
+    <nav id="topnav" class="navbar navbar-inverse navbar-fixed-top" style="margin-bottom: 0%" >
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand animated tada" href="#" style="padding-top:-12px;"><b>TEAM</b> <font color="#800000" size="5em" style="padding-right: 10px;">3</font>Cinemas</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navBar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#home">Home</a></li>
+                    <li><a href="#films">Films</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#search" data-toggle="dropdown" onclick="dim();"><span class="glyphicon glyphicon-search"></span> Search</a>
+                        <div class="dropdown-menu animated fadeInDown" style="padding:17px;" id="formSearch">
+                            <form class="search" name="searchForm">
+                                <input name="searchFilm" id="searchFilm" type="text" placeholder="Search..."> <br/>
+                                <button type="button" id="btnSearch" class="btn" onclick="spinnerSearch();">Search!</button>
+                            </form>
+                        </div>
+                        <div class="animated fadeIn" style="display:none;" id="spinner">
+                        </div>
+                    </li>
+                    <li><a href="#register"><span class="glyphicon glyphicon-pencil"></span> Register</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#account" data-toggle="dropdown" onclick=""><span class="glyphicon glyphicon-user"></span> <span id="login">Login</span></a>
+                        <div class="dropdown-menu animated fadeInDown" style="padding:17px;" id="formLogin">
+                            <form class="form" name="logForm">
+                                <h3>Please Login:</h3>
+                                <input name="username" id="username" type="text" placeholder="Username"><br/>
+                                <input name="password" id="password" type="password" placeholder="Password"><br/>
+                                <button type="button" id="btnLogin" class="btn" onclick="document.getElementById('login').innerHTML = 'Account'; confirmUser();">Login</button>
+                            </form>
+                        </div>
+                        <div class="dropdown-menu animated fadeIn" style="padding:17px; display:none;" id="formLogged">
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="collapse navbar-collapse" id="navBar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#home">Home</a></li>
-                <li><a href="#films">Films</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" href="#search" data-toggle="dropdown" onclick="dim();"><span class="glyphicon glyphicon-search"></span> Search</a>
-                    <div class="dropdown-menu animated fadeInDown" style="padding:17px;" id="formSearch">
-                        <form class="search" name="searchForm">
-                            <input name="searchFilm" id="searchFilm" type="text" placeholder="Search..."> <br/>
-                            <button type="button" id="btnSearch" class="btn" onclick="spinnerSearch();">Search!</button>
-                        </form>
-                    </div>
-                    <div class="animated fadeIn" style="display:none;" id="spinner">
-                    </div>
-                </li>
-                <li><a href="#register"><span class="glyphicon glyphicon-pencil"></span> Register</a></li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" href="#account" data-toggle="dropdown" onclick=""><span class="glyphicon glyphicon-user"></span> <span id="login">Login</span></a>
-                    <div class="dropdown-menu animated fadeInDown" style="padding:17px;" id="formLogin">
-                        <form class="form" name="logForm">
-                            <h3>Please Login:</h3>
-                            <input name="username" id="username" type="text" placeholder="Username"><br/>
-                            <input name="password" id="password" type="password" placeholder="Password"><br/>
-                            <button type="button" id="btnLogin" class="btn" onclick="document.getElementById('login').innerHTML = 'Account'; confirmUser();">Login</button>
-                        </form>
-                    </div>
-                    <div class="dropdown-menu animated fadeIn" style="padding:17px; display:none;" id="formLogged">
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
     </nav>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-wrap="false" data-interval="4000">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+        </ol>
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active film1">
+                <div class="fill" style="background-image:url('img/rogueoneposterr.jpg');"></div>
+                <div class="carousel-caption animated fadeIn">
+                <div class="carousel-caption">
+                    <h3>Rogue One</h3>
+                    <p>Now in Cinemas</p>
+                </div>
+            </div>
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-        <div class="item active film1">
-            <div class="fill" style="background-image:url('img/rogueoneposterr.jpg');"></div>
-            <div class="carousel-caption animated fadeIn">
-                <h3>Rogue One</h3>
-                <p>Now in Cinemas</p>
+            <div class="item film2">
+                <div class="fill" style="background-image:url('img/bobposter2.jpg');"></div>
+                <div class="carousel-caption animated fadeIn">
+                <div class="carousel-caption">
+                    <h3>A War Story</h3>
+                    <p>Remastered</p>
+                </div>
             </div>
         </div>
-
-        <div class="item film2">
-            <div class="fill" style="background-image:url('img/bandb.jpg');"></div>
-            <div class="carousel-caption animated fadeIn">
-                <h3>A War Story</h3>
-                <p>Remastered</p>
-            </div>
-        </div>
-
-        <div class="item film3">
-            <div class="fill" style="background-image:url('img/lalaland.jpg');"></div>
-            <div class="carousel-caption animated fadeIn">
-                    <h3>La La Land</h3>
-                    <p>Beautiful and Catchy!</p>
-            </div>
-        </div>
-
-        <div class="item film4">
-            <div class="fill" style="background-image:url('img/hacksaw.jpg');"></div>
-            <div class="carousel-caption animated fadeIn">
-                    <h3>Hacksaw Ridge</h3>
-                    <p>He never lifted a gun!</p>
-            </div>
-        </div>
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
-
-<script type="text/javascript">
-    var b = false;
-
-    function visible(id) {
-        var e = document.getElementById(id);
-        if(e.style.display == 'block')
-            e.style.display = 'none';
-        else
-            e.style.display = 'block';
-        b = true;
-    }
-
-    function disappear() {
-        var e = document.getElementById('formLogged');
-        var f = document.getElementById('spinner');
-        if(!b) {
-            e.style.display = 'none';
-            f.style.display = 'none';
-        }
-        b=false;
-    }
-</script>
-
-<script type="text/javascript">
-    function confirmUser() {
-        var username = document.forms["logForm"]["username"].value;
-        var password = document.forms["logForm"]["password"].value;
-
-        if (username == "") {
-            alert("Username is empty! Please try again");
-            return false;
-        } else if (password == "") {
-            alert("Password is empty! Please try again");
-            return false;
-        }
-
-        if (username != "") {
-            visible('formLogged');
-            document.getElementById('formLogged').innerHTML = '<h3> Welcome ' + username + '</h3>';
-        }
-    }
-</script>
-
-<script type="text/javascript">
-    function spinnerSearch() {
-        var searchInput = document.forms["searchForm"]["searchFilm"].value;
-
-        if (searchInput != "") {
-            visible('spinner');
-            document.getElementById('spinner').innerHTML = '<i class="fa fa-spinner fa-spin" style="font-size:24px"></i>';
-        }
-    }
-</script>
+        <div id="quickbook">
+            <form class="text-center">
+                <div class="form-group">
+                    <div class="input-group film">
+                        <p>Select A Cinema: </p>
+                        <select class="form-control" id="cinemaPicker">
+                        </select>
+                        <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-screenshot"></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group film">
+                        <p>Select A Film: </p>
+                        <select class="form-control" id="filmPicker">
+                        </select>
+                        <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-film"></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group date" id="datePicker1">
+                        <p>Select A Date: </p>
+                        <input type="text" class="form-control"/>
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group time">
+                        <p>Select A Time: </p>
+                        <select class="form-control" id="timePicker1">
+                        </select>
+                        <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    <footer class="container-fluid text-center">
+        <p class="text-center">Sign up for our newsletter and special offers:</p>
+        <form class="text-center">
+            <input type="email" class="form-control" size="50" placeholder="Email Address">
+            <button type="button" class="btn btn-primary">Sign Up</button>
+        </form>
+        <p class="text-center">Copyright Team3Cinemas</p>
+    </footer>
 </body>
 </html>
