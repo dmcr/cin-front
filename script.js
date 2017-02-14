@@ -5,6 +5,53 @@ $(function () {
     $('#datePicker1').datepicker();
 });
 
+var b = false;
+function visible(id) {
+    var e = document.getElementById(id);
+    if(e.style.display == 'block')
+        e.style.display = 'none';
+    else
+        e.style.display = 'block';
+    b = true;
+}
+function disappear() {
+    var e = document.getElementById('formLogged');
+    var f = document.getElementById('spinner');
+    if(!b) {
+        e.style.display = 'none';
+        f.style.display = 'none';
+    }
+    b=false;
+}
+
+
+
+    function confirmUser() {
+        var username = document.forms["logForm"]["username"].value;
+        var password = document.forms["logForm"]["password"].value;
+        if (username == "") {
+            alert("Username is empty! Please try again");
+            return false;
+        } else if (password == "") {
+            alert("Password is empty! Please try again");
+            return false;
+        }
+        if (username != "") {
+            visible('formLogged');
+            document.getElementById('formLogged').innerHTML = '<h3> Welcome ' + username + '</h3>';
+        }
+    }
+
+
+
+    function spinnerSearch() {
+        var searchInput = document.forms["searchForm"]["searchFilm"].value;
+        if (searchInput != "") {
+            visible('spinner');
+            document.getElementById('spinner').innerHTML = '<i class="fa fa-spinner fa-spin" style="font-size:24px"></i>';
+        }
+    }
+
 // $(function() {
 //     $('#glyphicon glyphicon-search').on('click', function(e) {
 //         $(this).toggleClass('open');

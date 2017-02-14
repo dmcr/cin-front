@@ -14,21 +14,22 @@
     <!-- Our Scripts -->
     <script src="script.js"></script>
     <!-- Date Picker -->
-    <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
-    <!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
     <script src="bootstrap-datepicker.min.js"></script>
 
     <!-- One Page Scroll CSS -->
     <!-- <link rel="stylesheet" type="text/css" href="onepage-scroll.css"> -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- JQuery UI css -->
+    <style rel="stylesheet" type="text/css" href="bootstrap-datepicker.css"></style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" type="text/css" href="cinemaStyle.css">
     <!-- Our StyleSheet -->
     <link rel="stylesheet" type="text/css" href="style.css">
-    <!-- JQuery UI css -->
-    <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
-    <style rel="stylesheet" type="text/css" href="bootstrap-datepicker.css"></style>
 </head>
-<body>
+<body onclick="disappear();">
     <nav id="topnav" class="navbar navbar-inverse navbar-fixed-top" style="margin-bottom: 0%" >
         <div class="container-fluid">
             <div class="navbar-header">
@@ -38,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><b>TEAM3</b> Cinemas</a>
+                <a class="navbar-brand animated tada" href="#" style="padding-top:-12px;"><b>TEAM</b> <font color="#800000" size="5em" style="padding-right: 10px;">3</font>Cinemas</a>
             </div>
             <div class="collapse navbar-collapse" id="navBar">
                 <ul class="nav navbar-nav">
@@ -48,8 +49,31 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#search"><span class="glyphicon glyphicon-search"></span> Search</a></li>
-                    <li><a href="#account"><span class="glyphicon glyphicon-user"></span> Account</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#search" data-toggle="dropdown" onclick="dim();"><span class="glyphicon glyphicon-search"></span> Search</a>
+                        <div class="dropdown-menu animated fadeInDown" style="padding:17px;" id="formSearch">
+                            <form class="search" name="searchForm">
+                                <input name="searchFilm" id="searchFilm" type="text" placeholder="Search..."> <br/>
+                                <button type="button" id="btnSearch" class="btn" onclick="spinnerSearch();">Search!</button>
+                            </form>
+                        </div>
+                        <div class="animated fadeIn" style="display:none;" id="spinner">
+                        </div>
+                    </li>
+                    <li><a href="#register"><span class="glyphicon glyphicon-pencil"></span> Register</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#account" data-toggle="dropdown" onclick=""><span class="glyphicon glyphicon-user"></span> <span id="login">Login</span></a>
+                        <div class="dropdown-menu animated fadeInDown" style="padding:17px;" id="formLogin">
+                            <form class="form" name="logForm">
+                                <h3>Please Login:</h3>
+                                <input name="username" id="username" type="text" placeholder="Username"><br/>
+                                <input name="password" id="password" type="password" placeholder="Password"><br/>
+                                <button type="button" id="btnLogin" class="btn" onclick="document.getElementById('login').innerHTML = 'Account'; confirmUser();">Login</button>
+                            </form>
+                        </div>
+                        <div class="dropdown-menu animated fadeIn" style="padding:17px; display:none;" id="formLogged">
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -65,6 +89,7 @@
         <div class="carousel-inner" role="listbox">
             <div class="item active film1">
                 <div class="fill" style="background-image:url('img/rogueoneposterr.jpg');"></div>
+                <div class="carousel-caption animated fadeIn">
                 <div class="carousel-caption">
                     <h3>Rogue One</h3>
                     <p>Now in Cinemas</p>
@@ -73,6 +98,7 @@
 
             <div class="item film2">
                 <div class="fill" style="background-image:url('img/bobposter2.jpg');"></div>
+                <div class="carousel-caption animated fadeIn">
                 <div class="carousel-caption">
                     <h3>A War Story</h3>
                     <p>Remastered</p>
