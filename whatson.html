@@ -9,7 +9,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!--Different font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 
     <style>
@@ -87,22 +86,27 @@
         function myFunction() {
             document.getElementById("demo").innerHTML = "You just clicked the button";
         }
-    </script>
-    <h1>WHATS ON?</h1>-->
+    </script>-->
+    <h1>WHATS ON?</h1>
 
-    <div id="gridofequals">
-
-        <img class="image" src="img/1.jpg" alt="Logan" height="300" width="175">
-        <img class="image" src="img/2.jpg" alt="the great wall" height="300" width="175">
-        <img class="image" src="img/3.jpg" alt="Lego batman" height="300" width="175">
+    <div id="gridofequals" >
+        <img class="image" onclick="myFunction()" src="img/1.jpg" alt="Logan" height="300" width="175">
+        <img class="image" onclick="myFunction()" src="img/2.jpg" alt="the great wall" height="300" width="175">
+        <img class="image" onclick="myFunction()" src="img/3.jpg" alt="Lego batman" height="300" width="175">
         <br>
         <br>
-        <img class="image" src="img/4.jpg" alt="hacksaw ridge" height="300" width="175">
-        <img class="image" src="img/5.jpg" alt="50 shades darker" height="300" width="175">
-        <img class="image" src="img/6.jpg" alt="la la land" height="300" width="175">
+        <img class="image" onclick="myFunction()" src="img/4.jpg" alt="hacksaw ridge" height="300" width="175">
+        <img class="image" onclick="myFunction()" src="img/5.jpg" alt="50 shades darker" height="300" width="175">
+        <img class="image" onclick="myFunction()" src="img/6.jpg" alt="la la land" height="300" width="175">
         <br>
         <br>
     </div>
+
+    <script>
+        function myFunction() {
+            alert("No description for this movie");
+                   }
+    </Script>
 
 
      <footer class="container-fluid text-center">
