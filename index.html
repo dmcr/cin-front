@@ -14,14 +14,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!--Different font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-
-    <link rel="stylesheet" type="text/css" href="cinemaStyle.css">
     <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway" rel="stylesheet">
     <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" type="text/css" href="cinemaStyle.css">
 
 </head>
 
-<body>
+<body onclick="disappear();">
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
@@ -32,7 +31,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><b>TEAM3</b> Cinemas</a>
+            <a class="navbar-brand animated tada" href="#" style="padding-top:-12px;"><b>TEAM</b> <font color="#800000" size="5em" style="padding-right: 10px;">3</font> Cinemas</a>
         </div>
         <div class="collapse navbar-collapse" id="navBar">
             <ul class="nav navbar-nav">
@@ -42,24 +41,50 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#search"><span class="glyphicon glyphicon-search"></span> Search</a></li>
-                <li><a href="#account"><span class="glyphicon glyphicon-user"></span> Account</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="#search" data-toggle="dropdown" onclick="dim();"><span class="glyphicon glyphicon-search"></span> Search</a>
+                    <div class="dropdown-menu animated fadeInDown" style="padding:17px;" id="formSearch">
+                        <form class="search" name="searchForm">
+                            <input name="searchFilm" id="searchFilm" type="text" placeholder="Search..."> <br/>
+                            <button type="button" id="btnSearch" class="btn" onclick="spinnerSearch();">Search!</button>
+                        </form>
+                    </div>
+                    <div class="animated fadeIn" style="display:none;" id="spinner">
+                    </div>
+                </li>
+                <li><a href="#register"><span class="glyphicon glyphicon-pencil"></span> Register</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="#account" data-toggle="dropdown" onclick=""><span class="glyphicon glyphicon-user"></span> <span id="login">Login</span></a>
+                    <div class="dropdown-menu animated fadeInDown" style="padding:17px;" id="formLogin">
+                        <form class="form" name="logForm">
+                            <h3>Please Login:</h3>
+                            <input name="username" id="username" type="text" placeholder="Username"><br/>
+                            <input name="password" id="password" type="password" placeholder="Password"><br/>
+                            <button type="button" id="btnLogin" class="btn" onclick="document.getElementById('login').innerHTML = 'Account'; confirmUser();">Login</button>
+                        </form>
+                    </div>
+                    <div class="dropdown-menu animated fadeIn" style="padding:17px; display:none;" id="formLogged">
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
-</nav>
+    </nav>
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
         <div class="item active film1">
             <div class="fill" style="background-image:url('img/rogueoneposterr.jpg');"></div>
-            <div class="carousel-caption">
+            <div class="carousel-caption animated fadeIn">
                 <h3>Rogue One</h3>
                 <p>Now in Cinemas</p>
             </div>
@@ -67,7 +92,7 @@
 
         <div class="item film2">
             <div class="fill" style="background-image:url('img/bandb.jpg');"></div>
-            <div class="carousel-caption">
+            <div class="carousel-caption animated fadeIn">
                 <h3>A War Story</h3>
                 <p>Remastered</p>
             </div>
@@ -75,7 +100,7 @@
 
         <div class="item film3">
             <div class="fill" style="background-image:url('img/lalaland.jpg');"></div>
-            <div class="carousel-caption">
+            <div class="carousel-caption animated fadeIn">
                     <h3>La La Land</h3>
                     <p>Beautiful and Catchy!</p>
             </div>
@@ -83,7 +108,7 @@
 
         <div class="item film4">
             <div class="fill" style="background-image:url('img/hacksaw.jpg');"></div>
-            <div class="carousel-caption">
+            <div class="carousel-caption animated fadeIn">
                     <h3>Hacksaw Ridge</h3>
                     <p>He never lifted a gun!</p>
             </div>
@@ -101,5 +126,58 @@
     </a>
 </div>
 
+<script type="text/javascript">
+    var b = false;
+
+    function visible(id) {
+        var e = document.getElementById(id);
+        if(e.style.display == 'block')
+            e.style.display = 'none';
+        else
+            e.style.display = 'block';
+        b = true;
+    }
+
+    function disappear() {
+        var e = document.getElementById('formLogged');
+        var f = document.getElementById('spinner');
+        if(!b) {
+            e.style.display = 'none';
+            f.style.display = 'none';
+        }
+        b=false;
+    }
+</script>
+
+<script type="text/javascript">
+    function confirmUser() {
+        var username = document.forms["logForm"]["username"].value;
+        var password = document.forms["logForm"]["password"].value;
+
+        if (username == "") {
+            alert("Username is empty! Please try again");
+            return false;
+        } else if (password == "") {
+            alert("Password is empty! Please try again");
+            return false;
+        }
+
+        if (username != "") {
+            visible('formLogged');
+            document.getElementById('formLogged').innerHTML = '<h3> Welcome ' + username + '</h3>';
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    function spinnerSearch() {
+        var searchInput = document.forms["searchForm"]["searchFilm"].value;
+
+        if (searchInput != "") {
+            visible('spinner');
+            document.getElementById('spinner').innerHTML = '<i class="fa fa-spinner fa-spin" style="font-size:24px"></i>';
+        }
+    }
+</script>
 </body>
 </html>
