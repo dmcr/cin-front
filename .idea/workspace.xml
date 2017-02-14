@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="005fad6d-32cd-4c03-9074-3b5927572084" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PromoPage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/meerkat.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/popcorn.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/unnamed.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cinemaStyle.css" afterPath="$PROJECT_DIR$/cinemaStyle.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PromoPage.html" afterPath="$PROJECT_DIR$/PromoPage.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,8 +27,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="166" column="45" lean-forward="true" selection-start-line="166" selection-start-column="45" selection-end-line="166" selection-end-column="45" />
+            <state relative-caret-position="455">
+              <caret line="49" column="33" lean-forward="false" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="41" />
               <folding>
                 <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -42,17 +44,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PromoPage.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PromoPage.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PromoPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+            <state relative-caret-position="399">
+              <caret line="152" column="22" lean-forward="false" selection-start-line="152" selection-start-column="22" selection-end-line="152" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cinemaStyle.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cinemaStyle.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cinemaStyle.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
@@ -117,6 +119,7 @@
         <option value="$PROJECT_DIR$/script.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/cinemaStyle.css" />
+        <option value="$PROJECT_DIR$/PromoPage.html" />
       </list>
     </option>
   </component>
@@ -175,8 +178,8 @@
       <recent name="C:\Users\Administrator\WebstormProjects\cin-front" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\WebstormProjects\cin-front" />
       <recent name="C:\Users\Administrator\WebstormProjects\cin-front\img" />
+      <recent name="C:\Users\Administrator\WebstormProjects\cin-front" />
       <recent name="C:\Users\Administrator\WebstormProjects\cin-front\img\" />
     </key>
   </component>
@@ -245,7 +248,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1486984938981</updated>
-      <workItem from="1486984940928" duration="32294000" />
+      <workItem from="1486984940928" duration="32526000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1486987027957</created>
@@ -324,11 +327,18 @@
       <option name="project" value="LOCAL" />
       <updated>1487084042310</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added mark and steves page and fixed css error">
+      <created>1487084311350</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1487084311350</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32294000" />
+    <option name="totallyTimeSpent" value="32526000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1120" height="1040" extended-state="0" />
@@ -384,7 +394,8 @@
     <MESSAGE value="current version" />
     <MESSAGE value="added kimberleys changes" />
     <MESSAGE value="fixed index" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed index" />
+    <MESSAGE value="Added mark and steves page and fixed css error" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added mark and steves page and fixed css error" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -420,10 +431,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cinemaStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="38" lean-forward="true" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="166" column="45" lean-forward="true" selection-start-line="166" selection-start-column="45" selection-end-line="166" selection-end-column="45" />
+        <state relative-caret-position="455">
+          <caret line="49" column="33" lean-forward="false" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="41" />
           <folding>
             <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -440,16 +459,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PromoPage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cinemaStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="38" lean-forward="true" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+        <state relative-caret-position="399">
+          <caret line="152" column="22" lean-forward="false" selection-start-line="152" selection-start-column="22" selection-end-line="152" selection-end-column="22" />
           <folding />
         </state>
       </provider>
