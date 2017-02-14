@@ -5,16 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Team3Cinemas</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!--Different font -->
+    <!-- One Page Scroll -->
+    <!-- <script src="jquery.onepage-scroll.min.js"></script> -->
+    <!-- Our Scripts -->
+    <script src="script.js"></script>
+    <!-- Date Picker -->
+    <script src="bootstrap-datepicker.min.js"></script>
+
+    <!-- One Page Scroll CSS -->
+    <!-- <link rel="stylesheet" type="text/css" href="onepage-scroll.css"> -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- JQuery UI css -->
+    <style rel="stylesheet" type="text/css" href="bootstrap-datepicker.css"></style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" type="text/css" href="cinemaStyle.css">
+    <!-- Our StyleSheet -->
+    <link rel="stylesheet" type="text/css" href="style.css">
     <style>
 
 
@@ -62,12 +75,6 @@
         padding: 25px;
     }
     </style>
-
-
-
-
-
-
      <script>
      $(document).ready(function(){
          $("p").hover(function(){
@@ -79,41 +86,61 @@
      });
      </script>
 
-
-
-
 </head>
 
 
 
 
-<body>
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#"><b>TEAM3</b> Cinemas</a>
-            </div>
-            <div class="collapse navbar-collapse" id="navBar">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#home">Home</a></li>
-                    <li><a href="#films">Films</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#search"><span class="glyphicon glyphicon-search"></span> Search</a></li>
-                    <li><a href="#account"><span class="glyphicon glyphicon-user"></span> Account</a></li>
-                </ul>
-            </div>
+<body onclick="disappear();">
+<nav id="topnav" class="navbar navbar-inverse navbar-fixed-top" style="margin-bottom: 0%" >
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated tada" href="#" style="padding-top:-12px;"><b>TEAM</b> <font color="#800000" size="5em" style="padding-right: 10px;">3</font>Cinemas</a>
         </div>
-    </nav>
+        <div class="collapse navbar-collapse" id="navBar">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="whatson.html">Whats On</a></li>
+                <li><a href="comingSoon.html">Coming soon</a></li>
+                <li class="active"><a href="PromoPage.html">Promotions</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="#search" data-toggle="dropdown" onclick="dim();"><span class="glyphicon glyphicon-search"></span> Search</a>
+                    <div class="dropdown-menu animated fadeInDown" style="padding:17px;" id="formSearch">
+                        <form class="search" name="searchForm">
+                            <input name="searchFilm" id="searchFilm" type="text" placeholder="Search..."> <br/>
+                            <button type="button" id="btnSearch" class="btn" onclick="spinnerSearch();">Search!</button>
+                        </form>
+                    </div>
+                    <div class="animated fadeIn" style="display:none;" id="spinner">
+                    </div>
+                </li>
+                <li><a href="#register"><span class="glyphicon glyphicon-pencil"></span> Register</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="#account" data-toggle="dropdown" onclick=""><span class="glyphicon glyphicon-user"></span> <span id="login">Login</span></a>
+                    <div class="dropdown-menu animated fadeInDown" style="padding:17px;" id="formLogin">
+                        <form class="form" name="logForm">
+                            <h3>Please Login:</h3>
+                            <input name="username" id="username" type="text" placeholder="Username"><br/>
+                            <input name="password" id="password" type="password" placeholder="Password"><br/>
+                            <button type="button" id="btnLogin" class="btn" onclick="document.getElementById('login').innerHTML = 'Account'; confirmUser();">Login</button>
+                        </form>
+                    </div>
+                    <div class="dropdown-menu animated fadeIn" style="padding:17px; display:none;" id="formLogged">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 
 
@@ -157,13 +184,13 @@
 
 
 
-    <footer class="container-fluid text-center">
-        <p>Sign up for our newsletter and special offers:</p>
-        <form class="form-inline">
-            <input type="email" class="form-control" size="50" placeholder="Email Address">
-            <button type="button" class="btn btn-danger">Sign Up</button>
-        </form>
-        <p>Copyright Team3Cinemas</p>
-    </footer>
+<footer class="container-fluid text-center">
+    <p class="text-center">Sign up for our newsletter and special offers:</p>
+    <form class="text-center">
+        <input type="email" class="form-control" size="50" placeholder="Email Address">
+        <button type="button" class="btn btn-primary">Sign Up</button>
+    </form>
+    <p class="text-center">Copyright Team3Cinemas</p>
+</footer>
 </body>
 </html>
