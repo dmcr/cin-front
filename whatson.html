@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Whats on</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+
+    <style>
+        body {font-family: "Lato", sans-serif}
+        footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+        }
+        #gridofequals {
+        margin: 0px 0px 0px 680px;
+
+          }
+
+        .image {
+            margin-right: 5px;
+            opacity: 1;
+            display: inline-block;
+            margin: 0 auto;
+            filter: alpha(opacity=50);
+        }
+        .image:hover {
+            opacity: 0.5;
+            filter: alpha(opacity=100);
+            height: 305px;
+            width: 183px;
+            -webkit-transition-duration: 0.3s;
+
+        }
+
+        h1
+        {
+            font-size:60px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><b>TEAM3</b> Cinemas</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navBar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="whatson.html">Whats On</a></li>
+                    <li><a href="comingSoon.html">Coming soon</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#search"><span class="glyphicon glyphicon-search"></span> Search</a></li>
+                    <li><a href="#account"><span class="glyphicon glyphicon-user"></span> Account</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+
+<!--    <button onclick="myFunction()">Click me</button>
+
+    <p id="demo"></p>
+    <script>
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "You just clicked the button";
+        }
+    </script>-->
+    <h1>WHATS ON?</h1>
+
+    <div id="gridofequals" >
+        <img class="image" onclick="myFunction()" src="img/1.jpg" alt="Logan" height="300" width="175">
+        <img class="image" onclick="myFunction()" src="img/2.jpg" alt="the great wall" height="300" width="175">
+        <img class="image" onclick="myFunction()" src="img/3.jpg" alt="Lego batman" height="300" width="175">
+        <br>
+        <br>
+        <img class="image" onclick="myFunction()" src="img/4.jpg" alt="hacksaw ridge" height="300" width="175">
+        <img class="image" onclick="myFunction()" src="img/5.jpg" alt="50 shades darker" height="300" width="175">
+        <img class="image" onclick="myFunction()" src="img/6.jpg" alt="la la land" height="300" width="175">
+        <br>
+        <br>
+    </div>
+
+    <script>
+        function myFunction() {
+            alert("No description for this movie");
+                   }
+    </Script>
+
+
+     <footer class="container-fluid text-center">
+        <p>Sign up for our newsletter and special offers:</p>
+        <form class="form-inline">
+            <input type="email" class="form-control" size="50" placeholder="Email Address">
+            <button type="button" class="btn btn-danger">Sign Up</button>
+        </form>
+        <p>Copyright Team3Cinemas</p>
+    </footer>
+</body>
+</html>
